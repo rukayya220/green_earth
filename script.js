@@ -5,6 +5,38 @@ const loadCategories =()=>{
     .then((json)=> displayCategories(json.categories));
 
 };
+
+const addToCard=(card)=>{
+    const cartContainer = document.getElementById('cartList');
+    
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML= `<div class=" bg-green-100 flex justify-between items-center p-4 rounded-lg mb-2" >
+                    <div id="cart">
+                    <p class="font-bold">${card.name}</p>
+                    <p>৳${card.price}</p>
+                   </div>
+                    <button class="text-red-600 font-bold removeBtn">X</button>
+                </div>`;
+            cartContainer.append(newDiv);
+//total
+            const grandTotal = document.getElementById('total');
+            let currentTotal = parseInt(grandTotal.innerText);
+            grandTotal.innerText = currentTotal + card.price;
+// remove
+     const removeBtn = newDiv.querySelector('.removeBtn');
+     removeBtn.addEventListener("click",() => {
+        cartContainer.removeChild(newDiv);
+        
+    let currentTotal = parseInt(grandTotal.innerText);
+     grandTotal.innerText = currentTotal - card.price;
+
+    })
+
+    }
+  
+
+
+//alltrees
 const loadAllTree =()=>{
     const url="https://openapi.programming-hero.com/api/plants";
     fetch(url)
@@ -23,11 +55,9 @@ const displayPlantCards=(cards)=>{
     // console.log(cards);
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML= "";
-
-
-
+    
     for(let card of cards){
-         console.log(card);
+        //  console.log(card);
         const cardDiv = document.createElement('div');
         cardDiv.innerHTML=`
           <div class="bg-white rounded-xl p-4 flex flex-col h-[400px] shadow-sm">
@@ -39,14 +69,13 @@ const displayPlantCards=(cards)=>{
 
                 <p class="font-bold">৳${card.price}</p>
                 </div>
-                <button class="bg-[#15803D] text-white px-3 py-2 rounded-3xl w-full">Add to Cart</button>
+                <button class="bg-[#15803D] text-white px-3 py-2 rounded-3xl w-full" onclick="addToCard({id:'${card.id}', name:'${card.name}',price:${card.price}})">Add to Cart</button>
         </div>
         `
         cardContainer.append(cardDiv);
     }
 
 }
-
 
 //categories
 const displayCategories=(categories)=>{
