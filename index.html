@@ -6,7 +6,7 @@
     <title>Green Earth</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-[#e5fbed] ">
 <!-- Navbar -->
  <nav class="bg-[#15803D] text-white">
     <div class="flex justify-between items-center mx-auto max-w-[1440px] py-3">
@@ -28,7 +28,7 @@
         </div>
       
 
-        <div class="border-3 border-red-600 ">
+        <div>
             <h1 class="text-black font-bold text-4xl">Plant a Tree, Grow a Future</h1>
         <p class="text-[#1F2937] my-4">Join our mission to plant 1 million trees and make the Earth greener for future <br>
 generations.</p>
@@ -36,8 +36,67 @@ generations.</p>
         </div>
         
      </section>
+<main class="mt-5">
 
-     
 
+     <h1 class="text-center font-bold text-2xl ">Choose Your Tress</h1>
+<section class="grid grid-cols-4 mt-10">
+     <!--Categories -->
+     <section class="mx-auto max-w-[1440px]">
+        
+        <div class="">
+            <h2 class="font-bold">Categories</h2>
+
+            <button class="px-5 py-2 font-semibold  text-[#1F2937] focus:bg-green-900 focus:text-white 
+             " onclick="loadAllTree()">All Trees</button>
+            </div>
+        <div id="categories-container">
+            
+           
+        </div>
+     </section>
+
+     <!-- Tress -->
+      <section id="card-container" class="   mx-auto  grid grid-cols-3 col-span-2 gap-2"> 
+       
+      </section>
+
+      <aside id="cart-container" class="bg-white rounded-xl p-4 w-70 shadow-md mx-4">
+        
+          <h2 class="font-bold mb-3">Your Card</h2>
+        <div class="w-50 bg-green-200 p-4 rounded-lg ">
+             <div>
+                <div class="flex justify-between items-center ">
+                   
+                </div>
+             </div>
+
+        </div>
+       
+      </aside>
+      
+      
+      </section>
+
+      </main>
+
+<!-- About the Campaign -->
+      <!-- <section class="my-5 mt-5 bg-[#e5fbed] ">
+        <h1 class="text-center font-bold text-3xl"> About the Campaign</h1>
+        <div class="mx-auto max-w-[1000px] flex justify-between items-center gap-5">
+           
+        <img src="assets/about.png" alt="" class="w-[530px] h-[400px]">
+        <div>
+        <p class="my-2">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+        <ul class="list-disc list-inside">
+            <li>Restoration of natural habitats</li>
+            <li>Improvement of air quality</li>
+            <li>Support for local communities</li>
+        </ul>
+        </div>
+        </div>
+      </section> -->
+
+<script src="script.js"></script>
 </body>
 </html>
