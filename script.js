@@ -100,7 +100,7 @@ const displayPlantCards=(cards)=>{
         //  console.log(card);
         const cardDiv = document.createElement('div');
         cardDiv.innerHTML=`
-          <div class="bg-white rounded-xl p-4 flex flex-col h-[400px] shadow-sm">
+          <div class="bg-white rounded-xl p-4 flex flex-col h-[400px] shadow-sm mb-3">
             <img src="${card.image}" alt="" class="w-full h-50 object-cover">
 
             <button onclick="loadPlantDetail(${card.id})"class="font-bold text-left">${card.name}</button>
@@ -126,7 +126,7 @@ const displayCategories=(categories)=>{
     for(let category of categories){
         // console.log(category);
         const btnDiv = document.createElement('div');
-        btnDiv.innerHTML = `<button class="px-5 py-2 font-semibold  text-[#1F2937] focus:bg-green-900 focus:text-white " onclick="loadTree('${category.id}')">${category.category_name}</button> 
+        btnDiv.innerHTML = `<button class=" py-2 font-semibold  text-[#1F2937] focus:bg-green-900 focus:text-white hover:bg-green-900 hover:text-white" onclick="loadTree('${category.id}')">${category.category_name}</button> 
         `
        categoriesContainer.append(btnDiv);
     }
